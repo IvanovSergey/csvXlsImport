@@ -1,0 +1,35 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Merchant Products';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="merchant-products-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'created_at',
+            'vendor_code',
+            'title',
+            'price',
+            //'old_price',
+            //'image',
+            //'quantity',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+
+</div>
